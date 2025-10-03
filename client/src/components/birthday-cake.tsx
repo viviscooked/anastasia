@@ -22,7 +22,7 @@ export default function BirthdayCake() {
   const [allBlownOut, setAllBlownOut] = useState(false);
   const [showWish, setShowWish] = useState(false);
   const [confetti, setConfetti] = useState<{ id: number; x: number; y: number; color: string; rotation: number }[]>([]);
-  const { isListening, audioLevel, startListening, stopListening, isSupported } = useMicrophone();
+  const { isListening, audioLevel, startListening, stopListening, isSupported, hasFailed } = useMicrophone();
 
   useEffect(() => {
     if (audioLevel > 0.3 && isListening) {
@@ -68,10 +68,10 @@ export default function BirthdayCake() {
     setTimeout(() => setConfetti([]), 3000);
   };
 
-  const handleManualBlow = () => {
-    if (isSupported) {
+  const handleManualBlow = async () => {
+    if (isSupported && !hasFailed) {
       if (!isListening) {
-        startListening();
+        await startListening();
       } else {
         stopListening();
       }
@@ -228,11 +228,11 @@ export default function BirthdayCake() {
           ) : (
             <>
               <Mic className="w-6 h-6 mr-3" />
-              {isSupported ? "Tap to Listen!" : "Tap to Blow!"}
+              {isSupported && !hasFailed ? "Tap to Listen!" : "Tap to Blow!"}
             </>
           )}
         </Button>
-        {isSupported && !allBlownOut && (
+        {isSupported && !hasFailed && !allBlownOut && (
           <p className="mt-4 text-sm text-muted-foreground">
             {isListening 
               ? "Blow into your microphone to extinguish the candles!"
@@ -240,9 +240,9 @@ export default function BirthdayCake() {
             }
           </p>
         )}
-        {!isSupported && (
+        {(!isSupported || hasFailed) && (
           <p className="mt-4 text-sm text-muted-foreground">
-            Microphone not supported - tap to blow manually!
+            {hasFailed ? "Microphone access denied - tap to blow manually!" : "Microphone not supported - tap to blow manually!"}
           </p>
         )}
       </motion.div>

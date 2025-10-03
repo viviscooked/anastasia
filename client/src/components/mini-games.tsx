@@ -258,16 +258,26 @@ export default function MiniGames() {
                 {balloonGame.balloons.map((balloon) => (
                   <motion.button
                     key={balloon.id}
-                    className="absolute text-4xl cursor-pointer hover:scale-125 transition-all"
+                    className="absolute text-4xl cursor-pointer hover:scale-125 transition-all pointer-events-auto"
                     style={{ 
                       left: `${balloon.x}%`, 
                       top: `${balloon.y}%`,
-                      filter: balloon.color 
+                      filter: balloon.color,
+                      touchAction: 'auto'
                     }}
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0, opacity: 0 }}
-                    onClick={() => popBalloon(balloon.id)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      popBalloon(balloon.id);
+                    }}
+                    onPointerDown={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      popBalloon(balloon.id);
+                    }}
                     whileHover={{ scale: 1.3 }}
                     whileTap={{ scale: 0.9 }}
                     data-testid={`balloon-${balloon.id}`}

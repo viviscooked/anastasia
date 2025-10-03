@@ -4,11 +4,13 @@ export function useMicrophone() {
   const [isListening, setIsListening] = useState(false);
   const [audioLevel, setAudioLevel] = useState(0);
   const [isSupported, setIsSupported] = useState(false);
+  const [hasFailed, setHasFailed] = useState(false);
   
   const audioContextRef = useRef<AudioContext | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const animationFrameRef = useRef<number | null>(null);
+  const isListeningRef = useRef<boolean>(false);
 
   useEffect(() => {
     // Check if getUserMedia is supported
@@ -43,11 +45,12 @@ export function useMicrophone() {
       const source = audioContext.createMediaStreamSource(stream);
       source.connect(analyser);
       
+      isListeningRef.current = true;
       setIsListening(true);
       
       // Start analyzing audio
       const analyzeAudio = () => {
-        if (!analyser) return;
+        if (!analyser || !isListeningRef.current) return;
         
         const dataArray = new Uint8Array(analyser.frequencyBinCount);
         analyser.getByteFrequencyData(dataArray);
@@ -58,7 +61,7 @@ export function useMicrophone() {
         
         setAudioLevel(normalizedLevel);
         
-        if (isListening) {
+        if (isListeningRef.current) {
           animationFrameRef.current = requestAnimationFrame(analyzeAudio);
         }
       };
@@ -68,11 +71,15 @@ export function useMicrophone() {
     } catch (error) {
       console.error('Error accessing microphone:', error);
       setIsListening(false);
+      setHasFailed(true);
+      setIsSupported(false);
     }
   }, [isSupported, isListening]);
 
   const stopListening = useCallback(() => {
-    if (!isListening) return;
+    if (!isListeningRef.current) return;
+    
+    isListeningRef.current = false;
     
     // Stop animation frame
     if (animationFrameRef.current) {
@@ -94,7 +101,7 @@ export function useMicrophone() {
     
     setIsListening(false);
     setAudioLevel(0);
-  }, [isListening]);
+  }, []);
 
   // Cleanup on unmount
   useEffect(() => {
@@ -107,6 +114,7 @@ export function useMicrophone() {
     isListening,
     audioLevel,
     isSupported,
+    hasFailed,
     startListening,
     stopListening
   };
