@@ -45,17 +45,17 @@ export default function CountdownTimer() {
         className="text-center"
       >
         <h3 className="font-serif text-4xl md:text-6xl gradient-text">
-          🎉 Happy Birthday, Princess! 🎉
+          🎉 С Днем Рождения, Принцесса! 🎉
         </h3>
       </motion.div>
     );
   }
 
   const timeUnits = [
-    { label: "Days", value: timeLeft.days, id: "days" },
-    { label: "Hours", value: timeLeft.hours, id: "hours" },
-    { label: "Minutes", value: timeLeft.minutes, id: "minutes" },
-    { label: "Seconds", value: timeLeft.seconds, id: "seconds" },
+    { label: "Дни", value: timeLeft.days, id: "days" },
+    { label: "Часы", value: timeLeft.hours, id: "hours" },
+    { label: "Минуты", value: timeLeft.minutes, id: "minutes" },
+    { label: "Секунды", value: timeLeft.seconds, id: "seconds" },
   ];
 
   return (

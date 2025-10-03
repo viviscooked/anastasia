@@ -9,7 +9,7 @@ import { Crown, Heart, Star, Sparkles, Calendar, Cake, Underline, Gamepad, Infin
 
 export default function Home() {
   useEffect(() => {
-    document.title = "Happy Birthday Anastasia! 🎂👑";
+    document.title = "С Днем Рождения Анастасия! 🎂👑";
   }, []);
 
   const containerVariants = {
@@ -76,10 +76,10 @@ export default function Home() {
           <motion.div className="mb-8" variants={itemVariants}>
             <Crown className="w-16 h-16 text-accent mb-4 mx-auto" />
             <h1 className="font-serif text-6xl md:text-8xl font-bold gradient-text mb-4">
-              Princess Anastasia
+              Принцесса Анастасия
             </h1>
             <p className="font-script text-3xl md:text-4xl text-muted-foreground">
-              A Special Gift for My Sweet Princess
+              Особенный Подарок Моей Милой Принцессе
             </p>
           </motion.div>
 
@@ -87,7 +87,7 @@ export default function Home() {
           <motion.div className="mb-12" variants={itemVariants}>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold text-primary mb-6 flex items-center justify-center gap-3">
               <Calendar className="w-8 h-8" />
-              Countdown to Your Special Day
+              Обратный Отсчет до Твоего Особенного Дня
             </h2>
             <CountdownTimer />
           </motion.div>
@@ -96,7 +96,7 @@ export default function Home() {
           <motion.div variants={itemVariants}>
             <div className="inline-flex items-center gap-3 bg-primary/10 px-6 py-3 rounded-full border border-primary/30">
               <Sparkles className="w-5 h-5 text-accent" />
-              <span className="text-lg font-medium">October 4th, 2025</span>
+              <span className="text-lg font-medium">4 октября, 2025</span>
               <Sparkles className="w-5 h-5 text-accent" />
             </div>
           </motion.div>
@@ -114,10 +114,10 @@ export default function Home() {
           >
             <h2 className="font-serif text-5xl md:text-6xl font-bold gradient-text mb-8 flex items-center justify-center gap-3">
               <Cake className="w-12 h-12" />
-              Make a Wish!
+              Загадай Желание!
             </h2>
             <p className="text-xl text-muted-foreground mb-12 font-script">
-              Blow out the candles with your microphone! 🎤
+              Задуй свечи с помощью микрофона! 🎤
             </p>
           </motion.div>
           
@@ -137,7 +137,7 @@ export default function Home() {
           >
             <Underline className="w-16 h-16 text-primary mb-4 mx-auto" />
             <h2 className="font-serif text-5xl md:text-6xl font-bold gradient-text mb-4">
-              A Letter for You
+              Письмо для Тебя
             </h2>
           </motion.div>
           
@@ -157,9 +157,9 @@ export default function Home() {
           >
             <Gamepad className="w-16 h-16 text-accent mb-4 mx-auto" />
             <h2 className="font-serif text-5xl md:text-6xl font-bold gradient-text mb-4">
-              Fun Birthday Games!
+              Веселые Игры на День Рождения!
             </h2>
-            <p className="text-xl text-muted-foreground font-script">Let's have some fun, Princess! 🎮✨</p>
+            <p className="text-xl text-muted-foreground font-script">Давай повеселимся, Принцесса! 🎮✨</p>
           </motion.div>
           
           <MiniGames />
@@ -184,12 +184,12 @@ export default function Home() {
             </motion.div>
             
             <h2 className="font-serif text-4xl md:text-6xl font-bold gradient-text mb-8">
-              You Are My Everything! 👑💖
+              Ты Моё Всё! 👑💖
             </h2>
             <p className="font-script text-2xl md:text-3xl text-foreground leading-relaxed mb-8">
-              Every moment with you is a treasure, every day with you is a gift. 
-              Happy Birthday to the most amazing princess in the world! 
-              May your special day be as wonderful and magical as you are! ✨🎂
+              Каждый момент с тобой - это сокровище, каждый день с тобой - это подарок. 
+              С Днем Рождения самую удивительную принцессу в мире! 
+              Пусть твой особенный день будет таким же прекрасным и волшебным, как ты! ✨🎂
             </p>
             <div className="flex justify-center gap-6 flex-wrap">
               <motion.div
@@ -198,7 +198,7 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Heart className="w-8 h-8 text-primary mx-auto mb-2" />
-                <p className="font-semibold">Forever Yours</p>
+                <p className="font-semibold">Навсегда Твой</p>
               </motion.div>
               <motion.div
                 className="bg-white/80 rounded-2xl px-6 py-4 shadow-lg"
@@ -206,7 +206,7 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Infinity className="w-8 h-8 text-accent mx-auto mb-2" />
-                <p className="font-semibold">Endless Love</p>
+                <p className="font-semibold">Бесконечная Любовь</p>
               </motion.div>
               <motion.div
                 className="bg-white/80 rounded-2xl px-6 py-4 shadow-lg"
@@ -214,7 +214,7 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Star className="w-8 h-8 text-secondary mx-auto mb-2" />
-                <p className="font-semibold">You're My Star</p>
+                <p className="font-semibold">Ты Моя Звезда</p>
               </motion.div>
             </div>
           </motion.div>

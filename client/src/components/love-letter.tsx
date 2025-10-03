@@ -35,7 +35,7 @@ export default function LoveLetter() {
         transition={{ delay: 0.3 }}
         viewport={{ once: true }}
       >
-        <p className="font-script text-2xl text-right text-muted-foreground">To my dearest Anastasia,</p>
+        <p className="font-script text-2xl text-right text-muted-foreground">Моей дорогой Анастасии,</p>
       </motion.div>
       
       <motion.div
@@ -46,24 +46,24 @@ export default function LoveLetter() {
         viewport={{ once: true }}
       >
         <motion.p variants={paragraphVariants}>
-          On this special day, I want you to know how incredibly blessed I am to have you in my life. 
-          You bring so much light, joy, and beauty to every moment we share together. 💖
+          В этот особенный день я хочу, чтобы ты знала, как невероятно я счастлив, что ты есть в моей жизни. 
+          Ты приносишь так много света, радости и красоты в каждый момент, который мы проводим вместе. 💖
         </motion.p>
         
         <motion.p variants={paragraphVariants}>
-          Your kindness, your smile, and your beautiful heart make every day brighter. 
-          You are not just my princess, you are my everything - my joy, my inspiration, my forever. 👑✨
+          Твоя доброта, твоя улыбка и твое прекрасное сердце делают каждый день ярче. 
+          Ты не просто моя принцесса, ты моё всё - моя радость, моё вдохновение, моя навсегда. 👑✨
         </motion.p>
         
         <motion.p variants={paragraphVariants}>
-          As you celebrate another year of your wonderful life, I hope you know that you deserve 
-          all the happiness in the world. May this birthday be filled with magical moments, 
-          sweet surprises, and dreams that come true. 🎂🎉
+          Празднуя еще один год твоей замечательной жизни, я надеюсь, что ты знаешь, что заслуживаешь 
+          всего счастья в мире. Пусть этот день рождения будет наполнен волшебными моментами, 
+          сладкими сюрпризами и мечтами, которые сбываются. 🎂🎉
         </motion.p>
         
         <motion.p variants={paragraphVariants}>
-          I promise to always be by your side, to make you smile, to support your dreams, 
-          and to love you more with each passing day. You are my forever princess! 💕👑
+          Я обещаю всегда быть рядом с тобой, заставлять тебя улыбаться, поддерживать твои мечты 
+          и любить тебя больше с каждым днем. Ты моя принцесса навсегда! 💕👑
         </motion.p>
       </motion.div>
 
@@ -105,7 +105,7 @@ export default function LoveLetter() {
           }}
           transition={{ duration: 3, repeat: Infinity }}
         >
-          With all my love ❤️
+          Со всей моей любовью ❤️
         </motion.p>
       </motion.div>
     </motion.div>

@@ -221,28 +221,28 @@ export default function BirthdayCake() {
           {isListening ? (
             <>
               <Volume2 className="w-6 h-6 mr-3 animate-pulse" />
-              Listening... Blow now!
+              Слушаю... Дуй сейчас!
             </>
           ) : allBlownOut ? (
-            "🎉 Wish Made!"
+            "🎉 Желание Загадано!"
           ) : (
             <>
               <Mic className="w-6 h-6 mr-3" />
-              {isSupported && !hasFailed ? "Tap to Listen!" : "Tap to Blow!"}
+              {isSupported && !hasFailed ? "Нажми Чтобы Слушать!" : "Нажми Чтобы Задуть!"}
             </>
           )}
         </Button>
         {isSupported && !hasFailed && !allBlownOut && (
           <p className="mt-4 text-sm text-muted-foreground">
             {isListening 
-              ? "Blow into your microphone to extinguish the candles!"
-              : "Click the button and allow microphone access to blow for real!"
+              ? "Дуй в микрофон, чтобы погасить свечи!"
+              : "Нажми кнопку и разреши доступ к микрофону, чтобы задуть по-настоящему!"
             }
           </p>
         )}
         {(!isSupported || hasFailed) && (
           <p className="mt-4 text-sm text-muted-foreground">
-            {hasFailed ? "Microphone access denied - tap to blow manually!" : "Microphone not supported - tap to blow manually!"}
+            {hasFailed ? "Доступ к микрофону запрещен - нажми, чтобы задуть вручную!" : "Микрофон не поддерживается - нажми, чтобы задуть вручную!"}
           </p>
         )}
       </motion.div>
@@ -280,11 +280,11 @@ export default function BirthdayCake() {
                 ❤️
               </motion.div>
               <h3 className="font-serif text-4xl font-bold gradient-text mb-6 mt-4">
-                Happy Birthday, Princess! 🎂👑
+                С Днем Рождения, Принцесса! 🎂👑
               </h3>
               <p className="font-script text-2xl md:text-3xl text-foreground leading-relaxed">
-                May all your dreams come true, and may this year bring you endless joy, laughter, and magical moments. 
-                You deserve the world and so much more! ✨💖
+                Пусть все твои мечты сбудутся, и пусть этот год принесет тебе бесконечную радость, смех и волшебные моменты. 
+                Ты заслуживаешь весь мир и гораздо больше! ✨💖
               </p>
               <div className="mt-8 flex justify-center gap-4">
                 {['⭐', '👑', '⭐'].map((icon, index) => (

@@ -235,8 +235,8 @@ export default function MiniGames() {
       <Card className="hover:shadow-2xl transition-all duration-300 border-2 border-primary/30">
         <CardHeader className="text-center">
           <div className="text-5xl mb-4">🎈</div>
-          <CardTitle className="font-serif text-2xl">Balloon Pop</CardTitle>
-          <p className="text-muted-foreground">Pop all the balloons!</p>
+          <CardTitle className="font-serif text-2xl">Лопни Шарик</CardTitle>
+          <p className="text-muted-foreground">Лопни все шарики!</p>
         </CardHeader>
         <CardContent>
           <div 
@@ -250,7 +250,7 @@ export default function MiniGames() {
                   className="bg-primary hover:bg-primary/90"
                   data-testid="start-balloon-game"
                 >
-                  Start Game
+                  Начать Игру
                 </Button>
               </div>
             ) : (
@@ -289,7 +289,7 @@ export default function MiniGames() {
             )}
           </div>
           <p className="text-lg font-semibold text-center">
-            Score: <span className="gradient-text" data-testid="balloon-score">{balloonGame.score}</span>
+            Счет: <span className="gradient-text" data-testid="balloon-score">{balloonGame.score}</span>
           </p>
         </CardContent>
       </Card>
@@ -298,8 +298,8 @@ export default function MiniGames() {
       <Card className="hover:shadow-2xl transition-all duration-300 border-2 border-primary/30">
         <CardHeader className="text-center">
           <div className="text-5xl mb-4">❤️</div>
-          <CardTitle className="font-serif text-2xl">Catch Hearts</CardTitle>
-          <p className="text-muted-foreground">Catch the falling hearts!</p>
+          <CardTitle className="font-serif text-2xl">Поймай Сердечки</CardTitle>
+          <p className="text-muted-foreground">Поймай падающие сердечки!</p>
         </CardHeader>
         <CardContent>
           <div 
@@ -315,7 +315,7 @@ export default function MiniGames() {
                   className="bg-primary hover:bg-primary/90"
                   data-testid="start-heart-game"
                 >
-                  Start Game
+                  Начать Игру
                 </Button>
               </div>
             ) : (
@@ -353,7 +353,7 @@ export default function MiniGames() {
             )}
           </div>
           <p className="text-lg font-semibold text-center">
-            Hearts: <span className="gradient-text" data-testid="hearts-score">{heartGame.score}</span>
+            Сердечки: <span className="gradient-text" data-testid="hearts-score">{heartGame.score}</span>
           </p>
         </CardContent>
       </Card>
@@ -362,8 +362,8 @@ export default function MiniGames() {
       <Card className="hover:shadow-2xl transition-all duration-300 border-2 border-primary/30 md:col-span-2 lg:col-span-1">
         <CardHeader className="text-center">
           <div className="text-5xl mb-4">🧩</div>
-          <CardTitle className="font-serif text-2xl">Memory Match</CardTitle>
-          <p className="text-muted-foreground">Find matching pairs!</p>
+          <CardTitle className="font-serif text-2xl">Найди Пару</CardTitle>
+          <p className="text-muted-foreground">Найди одинаковые пары!</p>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-4 gap-2 mb-4" data-testid="memory-game-grid">
@@ -414,10 +414,10 @@ export default function MiniGames() {
               className="bg-primary hover:bg-primary/90"
               data-testid="restart-memory-game"
             >
-              New Game
+              Новая Игра
             </Button>
             <p className="text-lg font-semibold">
-              Pairs: <span className="gradient-text" data-testid="memory-score">{matchedPairs}/8</span>
+              Пары: <span className="gradient-text" data-testid="memory-score">{matchedPairs}/8</span>
             </p>
           </div>
         </CardContent>
