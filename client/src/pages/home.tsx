@@ -4,6 +4,7 @@ import BirthdayCake from "@/components/birthday-cake";
 import LoveLetter from "@/components/love-letter";
 import MiniGames from "@/components/mini-games";
 import FloatingParticles from "@/components/floating-particles";
+import BackgroundMusic from "@/components/background-music";
 import { motion } from "framer-motion";
 import { Crown, Heart, Star, Sparkles, Calendar, Cake, Underline, Gamepad, Infinity } from "lucide-react";
 
@@ -32,6 +33,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <FloatingParticles />
+      <BackgroundMusic />
       
       {/* Hero Section with Countdown */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-12 px-4">
