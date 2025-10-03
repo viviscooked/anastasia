@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(350 100% 98%);
+  --foreground: hsl(280 80% 20%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(280 80% 20%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(280 80% 20%);
+  --primary: hsl(330 100% 71%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(270 60% 85%);
+  --secondary-foreground: hsl(280 80% 20%);
+  --muted: hsl(340 60% 95%);
+  --muted-foreground: hsl(280 40% 45%);
+  --accent: hsl(45 100% 70%);
+  --accent-foreground: hsl(280 80% 20%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(330 50% 90%);
+  --input: hsl(330 50% 90%);
+  --ring: hsl(330 100% 71%);
+  --chart-1: hsl(330 100% 71%);
+  --chart-2: hsl(270 60% 85%);
+  --chart-3: hsl(45 100% 70%);
+  --chart-4: hsl(280 80% 20%);
+  --chart-5: hsl(350 100% 98%);
+  --sidebar: hsl(0 0% 100%);
+  --sidebar-foreground: hsl(280 80% 20%);
+  --sidebar-primary: hsl(330 100% 71%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(340 60% 95%);
+  --sidebar-accent-foreground: hsl(280 80% 20%);
+  --sidebar-border: hsl(330 50% 90%);
+  --sidebar-ring: hsl(330 100% 71%);
+  --font-sans: 'Poppins', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-script: 'Dancing Script', cursive;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: hsl(280 80% 5%);
+  --foreground: hsl(350 100% 98%);
+  --card: hsl(280 60% 10%);
+  --card-foreground: hsl(350 100% 95%);
+  --popover: hsl(280 80% 5%);
+  --popover-foreground: hsl(350 100% 98%);
+  --primary: hsl(330 100% 71%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(270 60% 15%);
+  --secondary-foreground: hsl(350 100% 95%);
+  --muted: hsl(280 60% 15%);
+  --muted-foreground: hsl(340 40% 70%);
+  --accent: hsl(45 100% 70%);
+  --accent-foreground: hsl(280 80% 5%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(280 60% 20%);
+  --input: hsl(280 60% 20%);
+  --ring: hsl(330 100% 71%);
+  --sidebar: hsl(280 60% 10%);
+  --sidebar-foreground: hsl(350 100% 95%);
+  --sidebar-primary: hsl(330 100% 71%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(280 60% 15%);
+  --sidebar-accent-foreground: hsl(350 100% 95%);
+  --sidebar-border: hsl(280 60% 20%);
+  --sidebar-ring: hsl(330 100% 71%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground;
+    background: linear-gradient(135deg, hsl(350 100% 98%) 0%, hsl(340 60% 95%) 50%, hsl(270 60% 95%) 100%);
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(330 100% 71%), hsl(270 100% 75%), hsl(45 100% 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  .candle-flame {
+    animation: flicker 0.3s ease-in-out infinite alternate;
+  }
+
+  @keyframes flicker {
+    0% { transform: scale(1) translateY(0); }
+    100% { transform: scale(1.1) translateY(-2px); }
+  }
+
+  .balloon-float {
+    animation: balloon-float 6s ease-in-out infinite;
+  }
+
+  @keyframes balloon-float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-30px) rotate(5deg); }
+  }
+
+  .sparkle-twinkle {
+    animation: sparkle-twinkle 1.5s ease-in-out infinite;
+  }
+
+  @keyframes sparkle-twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  .heart-float {
+    animation: heart-float 4s linear infinite;
+  }
+
+  @keyframes heart-float {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .confetti-fall {
+    animation: confetti-fall 3s linear forwards;
+  }
+
+  @keyframes confetti-fall {
+    to {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  .game-object-fall {
+    animation: game-object-fall 3s linear forwards;
+  }
+
+  @keyframes game-object-fall {
+    to {
+      transform: translateY(100vh);
+    }
+  }
+}
