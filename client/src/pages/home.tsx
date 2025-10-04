@@ -3,10 +3,11 @@ import CountdownTimer from "@/components/countdown-timer";
 import BirthdayCake from "@/components/birthday-cake";
 import LoveLetter from "@/components/love-letter";
 import MiniGames from "@/components/mini-games";
+import PhotoGallery from "@/components/photo-gallery";
 import FloatingParticles from "@/components/floating-particles";
 import BackgroundMusic from "@/components/background-music";
 import { motion } from "framer-motion";
-import { Crown, Heart, Star, Sparkles, Calendar, Cake, Underline, Gamepad, Infinity } from "lucide-react";
+import { Crown, Heart, Star, Sparkles, Calendar, Cake, Underline, Gamepad, Infinity, Camera } from "lucide-react";
 
 export default function Home() {
   useEffect(() => {
@@ -165,6 +166,23 @@ export default function Home() {
           </motion.div>
           
           <MiniGames />
+        </div>
+      </section>
+
+      {/* Photo Gallery Section */}
+      <section className="relative py-20 px-4 bg-gradient-to-br from-primary/20 to-secondary/30">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Camera className="w-16 h-16 text-primary mb-4 mx-auto" />
+          </motion.div>
+          
+          <PhotoGallery />
         </div>
       </section>
 
