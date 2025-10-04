@@ -28,9 +28,10 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: path.resolve(import.meta.dirname, "docs"), // 👈 build into docs folder for GitHub Pages
     emptyOutDir: true,
   },
+  base: "/anastasia/", // 👈 IMPORTANT for GitHub Pages
   server: {
     fs: {
       strict: true,
@@ -38,3 +39,4 @@ export default defineConfig({
     },
   },
 });
+
